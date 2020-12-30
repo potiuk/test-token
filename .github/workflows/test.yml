@@ -26,7 +26,7 @@ env:
   RUN_ID: "${{ github.run_id }}"
 jobs:
   do:
-    name: Selective checks
+    name: Repo
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
@@ -36,7 +36,7 @@ jobs:
       - name: Git Push
         run: |
           touch x
-          cat ${RUN_ID} > x
+          echo ${RUN_ID} > x
           git add x
           git config user.name "Evil bot"
           git config user.email "jarek@potiuk.com"
